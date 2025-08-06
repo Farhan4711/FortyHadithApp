@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Amiri';
+  font-weight: 400; /* For Amiri-Regular.ttf */
+  src: url('fonts/Amiri-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Amiri';
+  font-weight: 700; /* For Amiri-Bold.ttf */
+  src: url('fonts/Amiri-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Amiri';
+  font-style: italic; /* For Amiri-Italic.ttf */
+  src: url('fonts/Amiri-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Amiri';
+  font-weight: 700; /* For Amiri-BoldItalic.ttf */
+  font-style: italic;
+  src: url('fonts/Amiri-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-weight: 400; /* For NotoNaskhArabic-Regular.ttf */
+  src: url('fonts/NotoNaskhArabic-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-weight: 500; /* For NotoNaskhArabic-Medium.ttf */
+  src: url('fonts/NotoNaskhArabic-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-weight: 600; /* For NotoNaskhArabic-SemiBold.ttf */
+  src: url('fonts/NotoNaskhArabic-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Naskh Arabic';
+  font-weight: 700; /* For NotoNaskhArabic-Bold.ttf */
+  src: url('fonts/NotoNaskhArabic-Bold.ttf') format('truetype');
+}
+
+:root {
+    --primary-color: #3F51B5;
+    --secondary-color: #FFC107;
+    --background-color: #E8EAF6;
+    --box-bg-color: #FFFFFF;
+    --text-color: #212121;
+    --branding-color: #7B1FA2;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Amiri', serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+#start-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    color: black;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.navigation button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.navigation button:hover:not(:disabled) {
+    background-color: #303F9F;
+}
+
+.navigation button:disabled {
+    background-color: #9E9E9E;
+    cursor: not-allowed;
+}
+
+.hadith-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hadith-box {
+    background-color: var(--box-bg-color);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* More powerful hover effect */
+.hadith-box:hover {
+    transform: scale(1.03) translateY(-5px); /* Slightly larger and more lift */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+    background-color: #f7f7f7; /* Subtle background color change */
+}
+
+.center-box {
+    text-align: center;
+}
+
+.box-heading {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+#hadith-heading {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.arabic-text {
+    font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+    font-size: 1.75rem;
+    text-align: right;
+    direction: rtl;
+}
+
+.english-text {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    text-align: left;
+    direction: ltr;
+}
+
+.hadith-boxes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .hadith-boxes-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+#loading-indicator, #error-message {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.branding {
+    text-align: center;
+    font-weight: bold;
+    color: var(--branding-color);
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.bottom-branding {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forty Hadith</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="landing-page" class="page">
+        <h1>Forty Hadith</h1>
+        <p>A digital book of timeless wisdom.</p>
+        <button id="start-button">Start Reading</button>
+        <div class="branding">Hudaonlineinstitute</div>
+    </div>
+
+    <div id="hadith-page" class="page hidden">
+        <div class="navigation">
+            <button id="prev-hadith">Previous Hadith</button>
+            <button id="next-hadith">Next Hadith</button>
+        </div>
+
+        <div class="hadith-container">
+            <div id="loading-indicator" class="hidden">Loading...</div>
+            <div id="error-message" class="hidden">We're sorry, the Hadith you're looking for is currently unavailable.</div>
+            
+            <div class="hadith-content">
+                <div class="hadith-box center-box">
+                    <h2 id="hadith-heading"></h2>
+                </div>
+                
+                <div class="hadith-boxes-grid">
+                    <div class="hadith-box">
+                        <h3 class="box-heading">Translation</h3>
+                        <p id="translation" class="english-text"></p>
+                    </div>
+                    
+                    <div class="hadith-box">
+                        <h3 class="box-heading">متن الحديث</h3>
+                        <p id="matn-ul-hadith" class="arabic-text"></p>
+                    </div>
+                </div>
+
+                <div class="hadith-boxes-grid">
+                    <div class="hadith-box">
+                        <h3 class="box-heading">Explanation</h3>
+                        <p id="explanation" class="english-text"></p>
+                    </div>
+                    
+                    <div class="hadith-box">
+                        <h3 class="box-heading">Practical Lesson</h3>
+                        <p id="practical-lesson" class="english-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="branding bottom-branding">Hudaonlineinstitute</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
